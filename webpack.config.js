@@ -30,13 +30,11 @@ module.exports = {
     entry: {
         vendor: [
             "lodash",
-            "iscroll",
             "react",
             "redux",
             "react-dom",
             "react-router",
             "react-redux",
-            'react-iscroll',
             'ts-react-app-infrastructure',
             'ts-react-app-web'
         ],
