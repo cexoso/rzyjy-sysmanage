@@ -1,0 +1,33 @@
+@theme-main-color:white;
+@body-bg-color:#ECECEC;
+@header-height:120px;
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: @body-bg-color;
+    overflow:hidden;
+}
+
+.bodyContainer {
+    width: 100%;
+    height: 100%;
+    .overflowY {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.header {
+    width: 100%;
+    height: @header-height;
+    background-color: @theme-main-color;
+}
+
+.main {
+    background-color: @theme-main-color;
+    margin-top:30px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}

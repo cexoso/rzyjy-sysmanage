@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        //基本配置
+        "module": "commonjs",
+        "jsx": "react",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "es6",
+            "scripthost"
+        ],
+        //错误检查    
+        "allowSyntheticDefaultImports": false,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "alwaysStrict": true,
+        //输出配置
+        "target": "es5",
+        "pretty": true,
+        "noEmitOnError": true,
+        "importHelpers": true,
+        "removeComments": true,
+        "inlineSources": false,
+        "sourceMap": false,
+        "preserveConstEnums": false,
+        "outDir": "./__out"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
