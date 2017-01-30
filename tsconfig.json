@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         //基本配置
-        "module": "amd",
+        "module": "commonjs",
         "jsx": "react",
         "moduleResolution": "node",
         "allowJs": true,
@@ -23,7 +23,7 @@
         "noUnusedParameters": true,
         "alwaysStrict": true,
         //输出配置
-        "target": "es5",
+        "target": "es6",
         "pretty": true,
         "noEmitOnError": true,
         "importHelpers": true,
@@ -31,5 +31,9 @@
         "inlineSources": false,
         "sourceMap": false,
         "preserveConstEnums": false
-    }
+    },
+    "include": [
+        "node_modules/ts-react-app-infrastructure/**/*",
+        "node_modules/ts-react-app-web/**/*"
+    ]
 }

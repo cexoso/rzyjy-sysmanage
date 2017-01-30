@@ -12,7 +12,7 @@ module.exports = {
                     },*/
             {
                 test: /\.tsx?$/,
-                loader: "react-hot!ts-loader",
+                loader: "react-hot!babel-loader!ts-loader",
                 include: [
                     path.join(__dirname, '/ts'),
                     path.join(__dirname, '/node_modules/ts-react-app-infrastructure'),
