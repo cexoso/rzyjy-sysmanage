@@ -26,7 +26,7 @@ export default class Root extends AWebComponent<props, state> {
 }
 
 const classNames = {
-    container: 'bodyContainer overflowY',
+    container: 'bodyContainer',
     main: 'main'
 }
 

@@ -3,13 +3,13 @@ const path = require("path");
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 const timestamp = new Date().getTime().toString();
-const outpath = "[name].bundle.js";
+const outpath = "[name].bundle." + timestamp + ".js";
 
 module.exports = {
     module: {
         loaders: [{
             test: /\.tsx?$/,
-            loader: "babel-loader!ts-loader",
+            loader: "babel-loader!awesome-typescript-loader",
             include: [
                 path.join(__dirname, '/ts'),
                 path.join(__dirname, '/node_modules/ts-react-app-infrastructure'),
