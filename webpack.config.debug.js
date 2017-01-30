@@ -4,25 +4,32 @@ const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = {
     module: {
-        loaders: [{
-            test: /\.jsx?$/,
-            loader: "react-hot!babel-loader",
-            include: path.join(__dirname, '/ts')
-        }, {
-            test: /\.tsx?$/,
-            loader: "react-hot!awesome-typescript-loader",
-            include: path.join(__dirname, '/ts')
-        }, {
-            test: /\.(png|jpg|gif)$/,
-            loader: 'url-loader?limit=8192',
-            include: path.join(__dirname, '/img')
+        loaders: [
+            /*{
+                        test: /\.jsx?$/,
+                        loader: "react-hot!babel-loader?presets[]=react,presets[]=es2015",
+                        include: path.join(__dirname, '/ts')
+                    },*/
+            {
+                test: /\.tsx?$/,
+                loader: "react-hot!ts-loader",
+                include: [
+                    path.join(__dirname, '/ts'),
+                    path.join(__dirname, '/node_modules/ts-react-app-infrastructure'),
+                    path.join(__dirname, '/node_modules/ts-react-app-web')
+                ]
+            }, {
+                test: /\.(png|jpg|gif)$/,
+                loader: 'url-loader?limit=8192',
+                include: path.join(__dirname, '/img')
 
-        }, {
-            test: /\.(css|less)$/,
-            loaders: ["style", "css", "less"],
-            include: path.join(__dirname, '/less')
+            }, {
+                test: /\.(css|less)$/,
+                loaders: ["style", "css", "less"],
+                include: path.join(__dirname, '/less')
 
-        }],
+            }
+        ],
         preLoaders: [{
             test: /\.js$/,
             loader: "source-map-loader",
@@ -38,7 +45,9 @@ module.exports = {
             "react-dom",
             "react-router",
             "react-redux",
-            'react-iscroll'
+            'react-iscroll',
+            'ts-react-app-infrastructure',
+            'ts-react-app-web'
         ],
         app: [
             'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port

@@ -3,18 +3,18 @@ const path = require("path");
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 const timestamp = new Date().getTime().toString();
-const outpath = "[name].bundle." + timestamp + ".js";
+const outpath = "[name].bundle.js";
 
 module.exports = {
     module: {
         loaders: [{
-            test: /\.jsx?$/,
-            loader: "babel-loader",
-            include: path.join(__dirname, '/ts')
-        }, {
             test: /\.tsx?$/,
             loader: "ts-loader",
-            include: path.join(__dirname, '/ts')
+            include: [
+                path.join(__dirname, '/ts'),
+                path.join(__dirname, '/node_modules/ts-react-app-infrastructure'),
+                path.join(__dirname, '/node_modules/ts-react-app-web')
+            ]
         }, {
             test: /.(png|jpg|gif)$/,
             loader: 'url-loader?limit=8192',
@@ -36,7 +36,9 @@ module.exports = {
             "react-dom",
             "react-router",
             "react-redux",
-            'react-iscroll'
+            'react-iscroll',
+            'ts-react-app-infrastructure',
+            'ts-react-app-web'
         ],
         app: [
             "./ts/index.tsx"
